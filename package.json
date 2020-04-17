@@ -1,0 +1,37 @@
+{
+    "name": "backendtemplate",
+    "version": "1.1.0",
+    "description": "Template for es6 express application",
+    "scripts": {
+        "test": "jest --collectCoverage",
+        "clean": "(rimraf ./dev/ && rimraf ./dist/ && rimraf ./package-lock.json && rimraf ./node_modules/ && npm i) || npm i",
+        "dev": "babel ./src/ --delete-dir-on-start -d ./dist/ && node ./dist/index",
+        "build": "babel ./src/ --delete-dir-on-start --compact true --minified -d ./dist/ && node ./dist/index"
+    },
+    "author": "CrypticSafe5",
+    "license": "ISC",
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-class-properties",
+            "wildcard"
+        ]
+    },
+    "dependencies": {
+        "@babel/cli": "^7.8.3",
+        "@babel/core": "^7.8.3",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/preset-env": "^7.8.3",
+        "babel-plugin-wildcard": "^6.0.0",
+        "cookie-parser": "^1.4.4",
+        "express": "^4.17.1",
+        "jest": "^25.1.0",
+        "moment": "^2.24.0",
+        "node-fetch": "^2.6.0",
+        "rimraf": "^3.0.0",
+        "swagger-jsdoc": "^4.0.0",
+        "swagger-ui-express": "^4.1.4"
+    }
+}
